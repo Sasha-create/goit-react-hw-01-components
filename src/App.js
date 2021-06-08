@@ -1,17 +1,23 @@
 import React from "react";
-import Profile from "./social-profile/Profile";
-import FriendList from "./friend-list/FriendList";
-import Statistics from "./statistics/Statistics";
-import TransactionHistory from "./transaction-history/TransactionHistory";
+import Profile from "./components/social-profile/Profile";
+import FriendList from "./components/friend-list/FriendList";
+import Statistics from "./components/statistics/Statistics";
+import TransactionHistory from "./components/transaction-history/TransactionHistory";
 
-import user from "./social-profile/user.json";
-import statisticalData from "./statistics/statistical-data.json";
-import friends from "./friend-list/friends.json";
-import transactions from "./transaction-history/transactions.json";
+import user from "./components/social-profile/user.json";
+import statisticalData from "./components/statistics/statistical-data.json";
+import friends from "./components/friend-list/friends.json";
+import transactions from "./components/transaction-history/transactions.json";
 
 const App = () => (
   <>
-    <Profile user={user} />
+    <Profile
+      name={user.name}
+      tag={user.tag}
+      location={user.location}
+      avatar={user.avatar}
+      stats={user.stats}
+    />
     <FriendList friends={friends} />
     <Statistics title="File upload" stats={statisticalData} />
     <TransactionHistory items={transactions} />
